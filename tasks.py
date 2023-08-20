@@ -31,8 +31,8 @@ class Tasks:
         search_query = user_voice[user_voice.find(' ') + 1:]
         results = wikipedia.summary(search_query, sentences=2)
         print(results)
-        self.jarvis.speak("According to Wikipedia")
-        self.jarvis.speak(results)
+        self.voice_recognition.speak("According to Wikipedia")
+        self.voice_recognition.speak(results)
 
 
     def open_youtube(self):
@@ -40,7 +40,7 @@ class Tasks:
            uses pywhatkit module(uses playonyt function for playing input request)
         """
         print("Sir, what should I search on Youtube?")
-        self.jarvis.speak("Sir, what should I search on Youtube?")
+        self.voice_recognition.speak("Sir, what should I search on Youtube?")
         self.search = self.voice_recognition.take_command()
         kit.playonyt(self.search)
 
@@ -50,7 +50,7 @@ class Tasks:
            uses webbrowser module
         """
         print("Sir, what should I search on Google?")
-        self.jarvis.speak("Sir, what should I search on Google?")
+        self.voice_recognition.speak("Sir, what should I search on Google?")
         self.search = self.voice_recognition.take_command()
         webbrowser.open(self.search)
 
@@ -76,7 +76,7 @@ class Tasks:
         give current time uses datetime module
         """
         current_time = datetime.datetime.now().strftime("%H:%M:%S")
-        self.jarvis.speak(f"Sir, the time is {current_time}")
+        self.voice_recognition.speak(f"Sir, the time is {current_time}")
 
 
     def open_camera(self):
@@ -159,7 +159,7 @@ class Tasks:
         #get ip address
         self.ip = get("https://api.ipify.org").text
         print(self.ip)
-        self.jarvis.speak(f"Your IP address is {self.ip}")
+        self.voice_recognition.speak(f"Your IP address is {self.ip}")
     
 
 
